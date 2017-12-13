@@ -1,0 +1,72 @@
+﻿@model IEnumerable<PhysicianDirectory.Models.ContactInfo>
+
+@{
+    ViewBag.Title = "ContactInformation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ContactInformation</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Personal Information", "PersonalInformation")</li>
+            <li>@Html.ActionLink("Contact Information", "ContactInformation")</li>
+            <li>@Html.ActionLink("Specializations", "SpecializationInformation")</li>
+        </ul>
+    </div>
+
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.HomeAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfficeAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfficePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAdd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CellphoneNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.HomeAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfficeAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfficePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAdd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CellphoneNumber)
+        </td>
+        
+    </tr>
+}
+
+</table>
